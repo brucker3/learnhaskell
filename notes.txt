@@ -1,0 +1,7 @@
+these are notes for short hand commands
+
+ghci starts haskell in the shell window
+:q or :quit quit the shell run
+:l or Load load a file to run in the shell
+:r reloaeds it
+:edit allows for editiing
