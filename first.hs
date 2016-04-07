@@ -1,3 +1,5 @@
+
+
 doubleMe x = x + x
 doubleU x y = doubleMe x + doubleMe y 
 doubleSmallNumber x = if x > 100
@@ -50,3 +52,32 @@ tell (x:y:_) = "this list is long the first two elements are:" ++ show x ++ "and
 sum' :: (Num a) => [a] -> a
 sum' [] = 0 
 sum' (x:xs) = x + sum' xs
+
+max' :: (Ord a) => a -> a -> a
+max' a b 
+     | a > b = a
+     | otherwise = b 
+
+-- myCompare :: (Ord a) => a -> a -> Ordering
+-- a myCompare b
+--  | a > b = GT
+--  | a == b = EQ
+--  | otherwise = LT
+
+
+initials :: String -> String -> String
+initials firstname lastname = [f] ++ "." ++ [l] ++ "."
+	 where (f:_) = firstname
+	       (l:_) = lastname
+
+
+cylinder :: (RealFloat a) => a -> a -> a
+cylinder r h = 
+	 let sideArea = 2*pi*r*h
+	     topArea = pi * r^2
+	 in  sideArea + 2 * topArea
+
+describeList :: [a] -> String
+describeList xs = "the list is " ++ case xs of [] -> "empty."
+	     	       	       	    	        [x] -> " a singleton list."
+						xs -> " a longer list."
